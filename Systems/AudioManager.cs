@@ -7,14 +7,7 @@ using System.Windows.Forms;
 
 namespace LaeeqFramwork.Systems
 {
-    /// <summary>
-    /// Centralized Audio Manager for WinForms Game Engine (Angry Birds style)
-    /// FEATURES:
-    /// - Background music (looped)
-    /// - Sound effects (MP3/WAV)
-    /// - Runtime-safe paths
-    /// - Automatic music ducking when SFX plays
-    /// </summary>
+   
     public sealed class AudioManager : IDisposable
     {
         private static AudioManager _instance;
@@ -25,11 +18,9 @@ namespace LaeeqFramwork.Systems
         private AudioFileReader _musicReader;
         private LoopStream _musicLoop;
 
-        // ================= SFX =================
         private readonly List<IWavePlayer> _activeSfxPlayers = new List<IWavePlayer>();
         private int _activeSfxCount = 0;
 
-        // ================= VOLUME =================
         public float MusicVolume { get; private set; } = 0.5f;
         public float SfxVolume { get; private set; } = 0.8f;
 
@@ -38,7 +29,6 @@ namespace LaeeqFramwork.Systems
 
         private AudioManager() { }
 
-        // ================= MUSIC =================
         public void PlayMusic(string relativePath, bool loop = true)
         {
             StopMusic();
@@ -86,13 +76,12 @@ namespace LaeeqFramwork.Systems
                 _musicReader.Volume = MusicVolume;
         }
 
-        // ================= SOUND EFFECTS =================
         public void PlaySfx(string relativePath)
         {
             string fullPath = GetFullPath(relativePath);
 
             if (!File.Exists(fullPath))
-                return; // Fail silently in-game
+                return; 
 
             var reader = new AudioFileReader(fullPath)
             {
@@ -101,7 +90,7 @@ namespace LaeeqFramwork.Systems
 
             var output = new WaveOutEvent();
 
-            // 🔽 Duck background music
+            
             _activeSfxCount++;
             DuckMusic();
 
@@ -118,7 +107,7 @@ namespace LaeeqFramwork.Systems
 
                 _activeSfxCount--;
 
-                // 🔼 Restore music when all SFX finished
+               
                 if (_activeSfxCount <= 0)
                 {
                     _activeSfxCount = 0;
@@ -172,9 +161,7 @@ namespace LaeeqFramwork.Systems
         }
     }
 
-    /// <summary>
-    /// Helper stream to loop background music
-    /// </summary>
+   
     public class LoopStream : WaveStream
     {
         private readonly WaveStream _sourceStream;

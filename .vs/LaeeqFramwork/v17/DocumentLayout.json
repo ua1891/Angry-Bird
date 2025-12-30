@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\core\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\systems\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:systems\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|d:\\semester 2\\oop\\framework\\laeeqframwork\\core\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:core\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:systems\\scoresystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|d:\\semester 2\\oop\\framework\\laeeqframwork\\systems\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:systems\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,7 +55,7 @@
       "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:enitites\\tnt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|d:\\semester 2\\oop\\framework\\laeeqframwork\\core\\gametime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\core\\gametime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19052151-5326-4863-8455-FF6AEB63C623}|LaeeqFramwork.csproj|solutionrelative:core\\gametime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -122,24 +122,24 @@
       "DocumentGroups": [
         {
           "DockedHeight": 379,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Systems\\AudioManager.cs",
               "RelativeDocumentMoniker": "Systems\\AudioManager.cs",
               "ToolTip": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Systems\\AudioManager.cs",
               "RelativeToolTip": "Systems\\AudioManager.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAwwM8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAQwKMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T20:07:18.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "StoneBlock.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Enitites\\StoneBlock.cs",
               "RelativeDocumentMoniker": "Enitites\\StoneBlock.cs",
@@ -147,8 +147,7 @@
               "RelativeToolTip": "Enitites\\StoneBlock.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAswCQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:50:48.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:50:48.019Z"
             },
             {
               "$type": "Document",
@@ -160,12 +159,11 @@
               "RelativeToolTip": "Enitites\\TNT.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAIwDIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:49:54.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:49:54.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LevelManager.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Core\\LevelManager.cs",
               "RelativeDocumentMoniker": "Core\\LevelManager.cs",
@@ -186,8 +184,7 @@
               "RelativeToolTip": "Interfaces\\IGameHost.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T10:28:46.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T10:28:46.617Z"
             },
             {
               "$type": "Document",
@@ -199,8 +196,7 @@
               "RelativeToolTip": "Interfaces\\IDrawable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T10:28:28.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T10:28:28.671Z"
             },
             {
               "$type": "Document",
@@ -212,12 +208,11 @@
               "RelativeToolTip": "Core\\BirdManger.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAUwB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T09:31:49.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T09:31:49.848Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ScoreSystem.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Systems\\ScoreSystem.cs",
               "RelativeDocumentMoniker": "Systems\\ScoreSystem.cs",
@@ -225,8 +220,7 @@
               "RelativeToolTip": "Systems\\ScoreSystem.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAowGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T18:24:23.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T18:24:23.676Z"
             },
             {
               "$type": "Document",
@@ -238,8 +232,7 @@
               "RelativeToolTip": "Enitites\\Pig.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAiwEgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:33:40.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:33:40.93Z"
             },
             {
               "$type": "Document",
@@ -251,8 +244,7 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAAF0AAAAAAAAAAAAcwGQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:46:01.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:46:01.426Z"
             },
             {
               "$type": "Document",
@@ -264,8 +256,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAkwBMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T10:41:46.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T10:41:46.31Z"
             },
             {
               "$type": "Document",
@@ -277,8 +268,7 @@
               "RelativeToolTip": "GameAllForms\\MainForm.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwA8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T10:37:57.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T10:37:57.488Z"
             },
             {
               "$type": "Document",
@@ -289,8 +279,7 @@
               "ToolTip": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\GameAllForms\\MainForm.cs [Design]",
               "RelativeToolTip": "GameAllForms\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T10:18:27.914Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-27T10:18:27.914Z"
             },
             {
               "$type": "Document",
@@ -301,8 +290,7 @@
               "ToolTip": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Properties\\Resources.resx",
               "RelativeToolTip": "Properties\\Resources.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-26T19:05:00.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T19:05:00.452Z"
             },
             {
               "$type": "Document",
@@ -314,8 +302,7 @@
               "RelativeToolTip": "Systems\\PhysicsSystem.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwBEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T16:45:18.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T16:45:18.946Z"
             },
             {
               "$type": "Document",
@@ -327,12 +314,11 @@
               "RelativeToolTip": "Interfaces\\IMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T18:12:50.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T18:12:50.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SlingshotMovement.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Movment\\SlingshotMovement.cs",
               "RelativeDocumentMoniker": "Movment\\SlingshotMovement.cs",
@@ -340,8 +326,7 @@
               "RelativeToolTip": "Movment\\SlingshotMovement.cs",
               "ViewState": "AgIAAG8AAAAAAAAAAAAwwIkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T15:16:24.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T15:16:24.5Z"
             },
             {
               "$type": "Document",
@@ -353,8 +338,7 @@
               "RelativeToolTip": "Core\\GameTime.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T14:17:54.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T14:17:54.077Z"
             },
             {
               "$type": "Document",
@@ -366,8 +350,7 @@
               "RelativeToolTip": "Systems\\Camera.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA1wBQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T14:29:43.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T14:29:43.94Z"
             },
             {
               "$type": "Document",
@@ -379,8 +362,7 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T14:23:28.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T14:23:28.553Z"
             },
             {
               "$type": "Document",
@@ -392,8 +374,7 @@
               "RelativeToolTip": "Core\\Game.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T14:03:13.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T14:03:13.573Z"
             },
             {
               "$type": "Document",
@@ -405,8 +386,7 @@
               "RelativeToolTip": "Systems\\CollisionSystem.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAuwCoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:57:50.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:57:50.992Z"
             },
             {
               "$type": "Document",
@@ -418,8 +398,7 @@
               "RelativeToolTip": "Movment\\PatrolMovement.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:51:16.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:51:16.245Z"
             },
             {
               "$type": "Document",
@@ -431,12 +410,11 @@
               "RelativeToolTip": "Movment\\KeyboardMovement.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAQwCsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:50:59.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:50:59.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Enitites\\Player.cs",
               "RelativeDocumentMoniker": "Enitites\\Player.cs",
@@ -444,12 +422,11 @@
               "RelativeToolTip": "Enitites\\Player.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAADwv04AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:50:23.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:50:23.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GameObject.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Enitites\\GameObject.cs",
               "RelativeDocumentMoniker": "Enitites\\GameObject.cs",
@@ -457,12 +434,11 @@
               "RelativeToolTip": "Enitites\\GameObject.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAswEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:50:14.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:50:14.97Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Enitites\\Enemy.cs",
               "RelativeDocumentMoniker": "Enitites\\Enemy.cs",
@@ -470,8 +446,7 @@
               "RelativeToolTip": "Enitites\\Enemy.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:50:09.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T13:50:09.486Z"
             },
             {
               "$type": "Document",
@@ -482,8 +457,7 @@
               "ToolTip": "D:\\Semester 2\\OOP\\Framework\\LaeeqFramwork\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T13:41:07.65Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-21T13:41:07.65Z"
             }
           ]
         },
