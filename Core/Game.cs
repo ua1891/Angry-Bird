@@ -9,7 +9,7 @@ namespace GameFrameWork
     public partial class Game
     {
         private List<GameObject> objects = new List<GameObject>();
-        private Camera camera = new Camera();
+        public Camera camera = new Camera();
         public Size ViewPort;
         public List<GameObject> Objects => objects;
         public BirdManger Bird {  get; set; }

@@ -9,6 +9,7 @@ namespace LaeeqFramwork.Systems
         public PointF Position { get; private set; }
         public float Zoom { get; set; } = 1f;
         public float LerpFactor { get; set; } = 8f;
+        public PointF Offset { get; set; } = new PointF(0, 0);
 
         private float shakeTime;
         private float shakeIntensity;
@@ -16,8 +17,8 @@ namespace LaeeqFramwork.Systems
 
         public void Follow(PointF target, Size viewport, float deltaTime)
         {
-            float desiredX = target.X - (viewport.Width / 2f) / Zoom;
-            float desiredY = target.Y - (viewport.Height / 2f) / Zoom;
+            float desiredX = (target.X - (viewport.Width / 2f) / Zoom) + Offset.X;
+            float desiredY = (target.Y - (viewport.Height / 2f) / Zoom) + Offset.Y;
             float t = 1f - (float)Math.Exp(-LerpFactor * deltaTime);
             Position = new PointF(
                 Position.X + (desiredX - Position.X) * t,
@@ -35,7 +36,7 @@ namespace LaeeqFramwork.Systems
         {
             Matrix m = new Matrix();
 
-            float offsetX = 0f, offsetY = 0f;
+            float offsetX = 0.6f, offsetY = 0.6f;
             if (shakeTime > 0f)
             {
                 offsetX = (float)(rand.NextDouble() * 2 - 1) * shakeIntensity;

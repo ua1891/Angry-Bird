@@ -12,6 +12,7 @@ namespace LaeeqFramwork
 {
     public partial class Form1 : Form, IGameHost
     {
+        private int zoomIntroFrames;
         Game game;
         PhysicsSystem physics = new PhysicsSystem();
         CollisionSystem collisions = new CollisionSystem();
@@ -38,6 +39,7 @@ namespace LaeeqFramwork
 
             // 3. Load First Level
             levelManager.LoadLevel(1);
+            Zoom();
            // ▶ Background Music
             AudioManager.Instance.PlayMusic("Assets/Audio/bg.mp3", true);
 
@@ -71,10 +73,9 @@ namespace LaeeqFramwork
                 // ONLY check status if cooldown is finished
                 CheckGameStatus();
             }
-
+           Normalize_the_zooming();
             Invalidate();
         }
-
         private void CheckGameStatus()
         {
             // 1. Did we win?
@@ -82,11 +83,9 @@ namespace LaeeqFramwork
             {
                 Main.Stop();
                 MessageBox.Show("LEVEL COMPLETE! Loading next level...");
-
                 int nextLevel = levelManager.CurrentLevelIndex + 1;
                 levelManager.LoadLevel(nextLevel);
-
-                // NEW: Reset cooldown (Give game 60 frames/1 second to load before checking again)
+                Zoom();
                 levelCooldown = 60;
 
                 Main.Start();
@@ -101,6 +100,7 @@ namespace LaeeqFramwork
                 {
                     levelManager.LoadLevel(levelManager.CurrentLevelIndex);
                     levelCooldown = 60; // NEW: Reset cooldown on retry too
+                    Zoom();
                     Main.Start();
                 }
                 else
@@ -112,6 +112,23 @@ namespace LaeeqFramwork
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        private void Zoom()
+        {
+            game.camera.Zoom = 0.6f;
+            zoomIntroFrames = 120;
+        }
+        private void Normalize_the_zooming()
+        {
+            if (zoomIntroFrames > 0)
+            {
+                zoomIntroFrames--;
+
+                if (zoomIntroFrames == 0)
+                {
+                    game.camera.Zoom = 1f; // back to normal
+                }
+            }
         }
     }
 }

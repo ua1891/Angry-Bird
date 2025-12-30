@@ -7,7 +7,8 @@ namespace GameFrameWork
 {
     public class GameObject : IDrawable, IUpdatable, IMovable, ICollidable, IPhysicsObject
     {
-
+        //For Expllsion
+        public Game GameRef { get; set; }
         public ScoreSystem ScoreSystem { get; set; }
         public bool HasScored=false;
         // Position of the object in the game world (encapsulated state)
@@ -17,8 +18,7 @@ namespace GameFrameWork
         // Used to compute the bounding box for collision detection (single responsibility: size responsibility)
         public SizeF Size { get; set; }
 
-        // Velocity of the object (speed and direction)
-        // Part of the IMovable contract and used by physics systems to update positions
+       
         public PointF Velocity { get; set; } = PointF.Empty;
 
         // Whether this object is active (used for cleanup)

@@ -77,9 +77,9 @@ namespace LaeeqFramwork
                 birdManager.EnqueueBird(new Player
                 {
                     Size = new Size(50, 50),
-                    Mass = 3f,
+                    Mass = 2f,
                     Sprite = Properties.Resources.Main,
-                    Movement = new SlingshotMovement(_canvas, new PointF(150, 400)),
+                    Movement = new SlingshotMovement(_canvas, new PointF(160, 460)),
                     ScoreSystem = _scoreSystem
                 });
             }
@@ -94,31 +94,27 @@ namespace LaeeqFramwork
             float currentY = GROUND_Y;  // Start exactly at the ground (500)
 
             // --- TIER 1: The Feet (Height 40) ---
-            // Sits on 500. Top becomes 460.
+          
             AddBlock(cx - 50, currentY);
             AddBlock(cx + 10, currentY);
             currentY -= BLOCK_H; // Move cursor up to 460
 
-            // --- TIER 2: The Bridge (Height 20) ---
-            // Sits on 460. Top becomes 440.
+          
             AddLongBlock(cx - 70, currentY);
             currentY -= PLANK_H; // Move cursor up to 440
 
             // --- TIER 3: Lower Room (Height 40) ---
-            // Sits on 440. Top becomes 400.
             AddBlock(cx - 50, currentY);
             AddPig(cx - 20, currentY);   // Pig trapped inside
             AddBlock(cx + 10, currentY);
             currentY -= BLOCK_H; // Move cursor up to 400
 
             // --- TIER 4: Middle Plank (Height 20) ---
-            // Sits on 400. Top becomes 380.
             AddLongBlock(cx - 70, currentY);
             currentY -= PLANK_H; // Move cursor up to 380
 
             // --- TIER 5: Upper Room (Double Height = 80) ---
 
-            // Stack Bottom (Sits on 380 -> Top 340)
             AddBlock(cx - 50, currentY);
             AddPig(cx - 20, currentY);   // Pig inside
             AddBlock(cx + 10, currentY);
@@ -135,34 +131,41 @@ namespace LaeeqFramwork
             currentY -= PLANK_H; // Move cursor up to 280
 
             // --- TIER 7: Top Hat (Height 40) ---
-            // Sits on 280. Top becomes 240.
             AddBlock(cx - 20, currentY);
         }
 
-        // ================= LEVEL 2: THE BRIDGE =================
-        // ================= LEVEL 2: DOUBLE PILLAR DUEL =================
+        // ================= LEVEL 2: FLOATING STONE GATE =================
         private void SetupLevel2()
         {
-            float leftX = 720;
-            float rightX = 860;
+            float leftWallX = 720;
+            float rightWallX = 840;
+            float centerX = 760;
+
             float currentY = GROUND_Y;
 
-            // --- LEFT PILLAR (SHORT: 2 BLOCKS) ---
-            AddStone(leftX, currentY);
-            AddStone(leftX, currentY - BLOCK_H);
+            // ----- LEFT STONE WALL (3 BLOCKS) -----
+            AddStone(leftWallX, currentY);
+            AddStone(leftWallX, currentY - BLOCK_H);
+            AddStone(leftWallX, currentY - BLOCK_H * 2);
 
-            // --- RIGHT PILLAR (SHORT: 2 BLOCKS) ---
-            AddStone(rightX, currentY);
-            AddStone(rightX, currentY - BLOCK_H);
+            // ----- RIGHT STONE WALL (3 BLOCKS) -----
+            AddStone(rightWallX, currentY);
+            AddStone(rightWallX, currentY - BLOCK_H);
+            AddStone(rightWallX, currentY - BLOCK_H * 2);
 
-            // --- TOP PLATFORMS ---
-            float topY = currentY - (BLOCK_H * 2);
-            AddLongBlock(leftX - 50, topY);
-            AddLongBlock(rightX - 50, topY);
+            // ----- FLOOR PLANK -----
+            float floorY = currentY - BLOCK_H * 3;
+            AddLongBlock(leftWallX - 10, floorY);
 
-            // --- PIGS (ONE ON EACH PILLAR) ---
-            AddPig(leftX + 20, topY - PLANK_H);
-            AddPig(rightX + 20, topY - PLANK_H);
+            // ----- PIGS INSIDE -----
+            AddPig(leftWallX + 20, floorY - PLANK_H);
+            AddPig(rightWallX - 20, floorY - PLANK_H);
+
+            // ----- ROOF (STONE + PLANK COMBO) -----
+            float roofY = floorY - PLANK_H;
+
+            AddStone(centerX - 20, roofY);
+            AddLongBlock(leftWallX - 20, roofY - BLOCK_H);
         }
 
 
@@ -209,7 +212,7 @@ namespace LaeeqFramwork
             // --- ROW 2: Supports (Height 40) ---
             AddBlock(x, currentY);
             AddStone(x + 40, currentY); // Solid center for TNT
-            AddBlock(x + 80, currentY);
+            AddBlock(x + 60, currentY);
             currentY -= BLOCK_H;
 
             // --- ROW 3: TNT Core (Height 40) ---
