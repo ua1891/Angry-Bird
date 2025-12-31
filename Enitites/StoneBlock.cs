@@ -24,13 +24,17 @@ namespace GameFrameWork
         public override void OnCollision(GameObject other)
         {
             if (HasScored) return;
-            float vX = Velocity.X - other.Velocity.X;
-            float vY = Velocity.Y - other.Velocity.Y;
-            float impactSpeed = (float)Math.Sqrt(vX * vX + vY * vY);
-
-            if (impactSpeed < 8f) return;
             if (!(other is Player player)) return;
+
+            float speed = (float)Math.Sqrt(
+                player.Velocity.X * player.Velocity.X +
+                player.Velocity.Y * player.Velocity.Y
+            );
+
+            if (speed < 8f) return;
+
             HasScored = true;
+            IsActive = false;
             ScoreSystem?.AdScore(50, Position, player);
         }
     }

@@ -46,8 +46,6 @@ namespace LaeeqFramwork
             Main.Start();
         }
 
-        // Removed the hardcoded Setting() method entirely! 
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -78,7 +76,6 @@ namespace LaeeqFramwork
         }
         private void CheckGameStatus()
         {
-            // 1. Did we win?
             if (game.AllPigsDestroyed())
             {
                 Main.Stop();
@@ -90,7 +87,6 @@ namespace LaeeqFramwork
 
                 Main.Start();
             }
-            // 2. Did we lose?
             else if (!game.Bird.HasBirdsLeft() && game.Bird.Currentplayer == null)
             {
                 Main.Stop();
@@ -116,7 +112,7 @@ namespace LaeeqFramwork
         private void Zoom()
         {
             game.camera.Zoom = 0.6f;
-            zoomIntroFrames = 120;
+            zoomIntroFrames = 100;
         }
         private void Normalize_the_zooming()
         {
@@ -126,7 +122,7 @@ namespace LaeeqFramwork
 
                 if (zoomIntroFrames == 0)
                 {
-                    game.camera.Zoom = 1f; // back to normal
+                    game.camera.Zoom = 1f;
                 }
             }
         }

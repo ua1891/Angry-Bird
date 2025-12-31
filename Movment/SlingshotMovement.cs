@@ -17,7 +17,7 @@ namespace LaeeqFramwork.Systems
         public PointF CurrentDrag;           // Current mouse position
         public PointF Origin;            // Bird's resting position (saved once)
         public SoundPlayer Crash;
-        public float PowerMultiplier = 0.3f;  // Controls launch strength
+        public float PowerMultiplier = 0.5f;  // Controls launch strength
         public float MaxPullDistance = 100f;  // Maximum elastic stretch
         private bool isLaunched = false;
         private Control canvas;                // Form for mouse input
@@ -112,9 +112,17 @@ namespace LaeeqFramwork.Systems
                 float vx = Origin.X - bird.Position.X;
                 float vy = Origin.Y - bird.Position.Y;
 
+                //Extensions
+                float PullDistacnce =(float)Math.Sqrt(vx * vx + vy * vy);
+                float NormalizedPull = PullDistacnce / MaxPullDistance;
+
+                //if it is greater than One which is Harmfull for Our Bird it feel like rocket so Bound to be <=1
+                NormalizedPull = Math.Min(NormalizedPull, 1f);
+                // here "O.6"How strong should the weakest possible shot be
+                float Power = PowerMultiplier * (0.3f+ NormalizedPull * NormalizedPull);
                 bird.Velocity = new PointF(
-                    vx * PowerMultiplier,
-                    vy * PowerMultiplier
+                    vx *Power,
+                    vy *Power
                 );
 
                 bird.HasPhysics = true;

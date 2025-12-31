@@ -56,7 +56,7 @@ namespace GameFrameWork
             float impactSpeed = (float)Math.Sqrt(vX * vX + vY * vY);
 
             // 4. I also increased the threshold slightly (from 3.0 to 4.5) to prevent accidental deaths from falling short distances
-            float breakThreshold = 4.5f;
+            float breakThreshold = 3.5f;
 
             if (other is Player)
             {

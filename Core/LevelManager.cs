@@ -134,41 +134,40 @@ namespace LaeeqFramwork
             AddBlock(cx - 20, currentY);
         }
 
-        // ================= LEVEL 2: FLOATING STONE GATE =================
         private void SetupLevel2()
         {
-            float leftWallX = 720;
-            float rightWallX = 840;
-            float centerX = 760;
+            float leftX = 700;          // Left wall X
+            float rightX = 840;         // Right wall X
+            float centerX = 770;        // Center for small roof stones
+            float currentY = GROUND_Y;  // Start at ground
 
-            float currentY = GROUND_Y;
+            // ===== LEFT STONE WALL =====
+            AddStone(leftX, currentY);                  // Bottom
+            AddStone(leftX, currentY - BLOCK_H);       // Middle
+            AddStone(leftX, currentY - BLOCK_H * 2);   // Top
 
-            // ----- LEFT STONE WALL (3 BLOCKS) -----
-            AddStone(leftWallX, currentY);
-            AddStone(leftWallX, currentY - BLOCK_H);
-            AddStone(leftWallX, currentY - BLOCK_H * 2);
+            // ===== RIGHT STONE WALL =====
+            AddStone(rightX, currentY);
+            AddStone(rightX, currentY - BLOCK_H);
+            AddStone(rightX, currentY - BLOCK_H * 2);
 
-            // ----- RIGHT STONE WALL (3 BLOCKS) -----
-            AddStone(rightWallX, currentY);
-            AddStone(rightWallX, currentY - BLOCK_H);
-            AddStone(rightWallX, currentY - BLOCK_H * 2);
-
-            // ----- FLOOR PLANK -----
+            // ===== FLOOR PLANK connecting walls =====
             float floorY = currentY - BLOCK_H * 3;
-            AddLongBlock(leftWallX - 10, floorY);
+            AddLongBlock(leftX - 10, floorY);  // Floor plank
 
-            // ----- PIGS INSIDE -----
-            AddPig(leftWallX + 20, floorY - PLANK_H);
-            AddPig(rightWallX - 20, floorY - PLANK_H);
+            // ===== PIGS inside gaps =====
+            AddPig(leftX + 15, floorY - PLANK_H);   // Left pig
+            AddPig(rightX - 15, floorY - PLANK_H);  // Right pig
 
-            // ----- ROOF (STONE + PLANK COMBO) -----
-            float roofY = floorY - PLANK_H;
+            // ===== Middle roof =====
+            float roofY = floorY - PLANK_H; // above floor plank
+            AddStone(centerX - 20, roofY);       // Center stone
+            AddLongBlock(leftX - 20, roofY - BLOCK_H / 2); // small roof plank
 
-            AddStone(centerX - 20, roofY);
-            AddLongBlock(leftWallX - 20, roofY - BLOCK_H);
+            // ===== Small top stones for style =====
+            AddStone(leftX + 5, roofY - BLOCK_H);  // Left top stone
+            AddStone(rightX - 5, roofY - BLOCK_H); // Right top stone
         }
-
-
         // ================= LEVEL 3: THE STAIRCASE =================
         private void SetupLevel3()
         {

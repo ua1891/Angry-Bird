@@ -67,13 +67,13 @@ namespace GameFrameWork
 
                 if (!HasImpacted)
                 {
-                    Velocity = new PointF(Velocity.X * 0.2f, Velocity.Y * 0.2f);
                     HasImpacted = true;
+                    Velocity = new PointF(Velocity.X * 0.2f, Velocity.Y * 0.2f);//chnage
                 }
                 if (!(enemy.HasScored))
                 {
                 ScoreSystem.AdScore(20, enemy.Position, this);
-                enemy.HasScored = true; // ✅ PREVENT REPEAT          
+                enemy.HasScored = true;       
                 }
             }
             else if (other is PowerUp power)

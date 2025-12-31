@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace GameFrameWork
 {
@@ -29,24 +30,31 @@ namespace GameFrameWork
 
         }
 
-        public override void OnCollision(GameObject other)
+        public override void OnCollision(GameObject player)
         {
-            if (_lifeTimeFrames<SAFE_FRAMES)
-            {
-                return;
-            }
-            // Instant explode on any contact
+            if (_lifeTimeFrames < SAFE_FRAMES) return;
+
+            float speed = (float)Math.Sqrt(
+                player.Velocity.X * player.Velocity.X +
+                player.Velocity.Y * player.Velocity.Y
+            );
+
+            if (speed < 6f) return; // 🔥 Impact threshold
+
             IsActive = false;
 
-            // Blast the other object away!
             float blastPower = 20f;
 
-            // Reverse velocity and multiply it
-            other.Velocity = new PointF(
-                -other.Velocity.X * 2f + (other.Position.X < Position.X ? -blastPower : blastPower),
-                -other.Velocity.Y * 2f - blastPower // Always blast up
+            player.Velocity = new PointF(
+                -player.Velocity.X * 2f,
+                -blastPower
             );
-            ScoreSystem?.AdScore(50, Position, other as Player);
+            if (player is Player p)
+            {
+                
+            ScoreSystem?.AdScore(50, Position, p);
+            }
         }
+
     }
 }
