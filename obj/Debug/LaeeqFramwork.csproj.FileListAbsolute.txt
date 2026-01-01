@@ -38,3 +38,4 @@ D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\bg.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\Slingshot.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\myedit_ai_sfx_1230010027.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\pigHit.mp3
+D:\Semester 2\OOP\Framework\LaeeqFramwork\obj\Debug\LaeeqFramwork.GameAllForms.ChooseLevel.resources

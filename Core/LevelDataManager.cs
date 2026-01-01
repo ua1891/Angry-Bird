@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LaeeqFramwork
 {
-    public class LevelManager
+    public class LevelDataManager
     {
         private Game _game;
         private ScoreSystem _scoreSystem;
@@ -21,7 +21,7 @@ namespace LaeeqFramwork
         private const float PLANK_W = 140f;  // Long Plank Width
         private const float PLANK_H = 20f;   // Long Plank Height (Thinner!)
 
-        public LevelManager(Game game, ScoreSystem scoreSystem, Control canvas)
+        public LevelDataManager(Game game, ScoreSystem scoreSystem, Control canvas)
         {
             _game = game;
             _scoreSystem = scoreSystem;

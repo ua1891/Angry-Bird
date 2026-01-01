@@ -1,11 +1,14 @@
 ﻿using GameFrameWork;
 using LaeeqFramwork.Core;
+using LaeeqFramwork.Extensions;
+using LaeeqFramwork.GameAllForms;
 using LaeeqFramwork.Interfaces;
 using LaeeqFramwork.Systems;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static LaeeqFramwork.Core.LevelFlowManager;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace LaeeqFramwork
@@ -13,36 +16,32 @@ namespace LaeeqFramwork
     public partial class Form1 : Form, IGameHost
     {
         private int zoomIntroFrames;
+        private int HighestScore {  get; set; }
         Game game;
         PhysicsSystem physics = new PhysicsSystem();
         CollisionSystem collisions = new CollisionSystem();
         GameTime gameTime = new GameTime();
         ScoreSystem scoreSystem = new ScoreSystem();
-
+        GameRepo gameRepo = new GameRepo();
         private int levelCooldown = 0;
         // NEW: Add the Level Manager
-        LevelManager levelManager;
+        LevelFlowManager _LevelFlowManager { get; set; }
+        LevelDataManager LevelDataManager { get; set; }
 
         public Game Gam => game;
 
-        public Form1()
+        public Form1(int Level,int HScore)
         {
             InitializeComponent();
             DoubleBuffered = true;
-
-            // 1. Init Game
+            HighestScore = HScore;
+            HighScore.Text = HScore.ToString();
             game = new Game(scoreSystem);
             game.ViewPort = this.ClientSize;
-
-            // 2. Init Level Manager
-            levelManager = new LevelManager(game, scoreSystem, this);
-
-            // 3. Load First Level
-            levelManager.LoadLevel(1);
+            LevelDataManager = new LevelDataManager(game, scoreSystem, this);
+            _LevelFlowManager = new LevelFlowManager(LevelDataManager, Gam, 4, Level);
             Zoom();
-           // ▶ Background Music
             AudioManager.Instance.PlayMusic("Assets/Audio/bg.mp3", true);
-
             Main.Start();
         }
 
@@ -56,11 +55,12 @@ namespace LaeeqFramwork
         {
             gameTime.Update();
             game.Update(gameTime);
-
             physics.Apply(game.Objects.ToList());
             collisions.Check(game.Objects.ToList());
             game.Cleanup();
             scoreSystem.Update();
+            Score.Text =scoreSystem.totalScore.ToString();
+            _LevelFlowManager.Update();
             // NEW: Decrease cooldown
             if (levelCooldown > 0)
             {
@@ -68,51 +68,89 @@ namespace LaeeqFramwork
             }
             else
             {
-                // ONLY check status if cooldown is finished
                 CheckGameStatus();
             }
-           Normalize_the_zooming();
+            Normalize_the_zooming();
             Invalidate();
         }
         private void CheckGameStatus()
         {
-            if (game.AllPigsDestroyed())
+            switch (_LevelFlowManager.State)
             {
-                Main.Stop();
-                MessageBox.Show("LEVEL COMPLETE! Loading next level...");
-                int nextLevel = levelManager.CurrentLevelIndex + 1;
-                levelManager.LoadLevel(nextLevel);
-                Zoom();
-                levelCooldown = 60;
-
-                Main.Start();
-            }
-            else if (!game.Bird.HasBirdsLeft() && game.Bird.Currentplayer == null)
-            {
-                Main.Stop();
-                DialogResult res = MessageBox.Show("FAILED! Retry?", "Game Over", MessageBoxButtons.YesNo);
-
-                if (res == DialogResult.Yes)
-                {
-                    levelManager.LoadLevel(levelManager.CurrentLevelIndex);
-                    levelCooldown = 60; // NEW: Reset cooldown on retry too
+                case GameState.LevelCompleted:
+                    Main.Stop();
+                    DialogResult Result=  MessageBox.Show("LEVEL COMPLETE!"," Are You wanna to continue Next...", MessageBoxButtons.YesNo);
+                    HScore();///////////
+                    if (Result==DialogResult.Yes)
+                    {
+                    _LevelFlowManager.NextLevel();
+                    LoadImages(_LevelFlowManager.CurrentLevel);
                     Zoom();
-                    Main.Start();
-                }
-                else
-                {
-                    Application.Exit();
-                }
+                    levelCooldown = 60;
+                    Main.Start();          
+                    }
+                    else
+                    {
+                        gameRepo.Add(_LevelFlowManager.CurrentLevel + 1, HighestScore);
+                        OpenMainForm();
+                    }
+                     break;
+                case GameState.Failed:
+
+                    Main.Stop();
+                    DialogResult res = MessageBox.Show("FAILED! Retry?", "Game Over", MessageBoxButtons.YesNo);
+                    Score.Text = "";
+                    if (res == DialogResult.Yes)
+                    {
+                        Main.Stop();
+                        _LevelFlowManager.Retry();
+                        levelCooldown = 60; // NEW: Reset cooldown on retry too
+                        Zoom();
+                        Main.Start();
+                    }
+                    else
+                    {
+                        gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
+                        OpenMainForm();
+                    }
+                    break;
+
+                case GameState.GameCompleted:
+                    Main.Stop();
+                    gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
+                    MessageBox.Show("YOU FINISHED ALL LEVELS!");
+                    OpenMainForm();
+                    break;
             }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        public void LoadImages(int Level)
+        {
+            switch (Level)
+            {
+                case 1:
+                    BackgroundImage = Properties.Resources.Bg;
+                    break;
+                case 2:
+                    BackgroundImage = Properties.Resources.Level2;
+                    break;
+                case 3:
+                    BackgroundImage = Properties.Resources.Bg;
+                    break;
+                case 4:
+                    BackgroundImage = Properties.Resources.Bg;
+                    break;
+
+
+            }
+        }
         private void Zoom()
         {
             game.camera.Zoom = 0.6f;
-            zoomIntroFrames = 100;
+            zoomIntroFrames = 60;
         }
         private void Normalize_the_zooming()
         {
@@ -125,6 +163,28 @@ namespace LaeeqFramwork
                     game.camera.Zoom = 1f;
                 }
             }
+        }
+        private void HScore()
+        {
+            int core = int.Parse(Score.Text);
+            if (core>HighestScore)
+            {
+                HighestScore = core;
+                HighScore.Text= Score.Text;
+                scoreSystem.totalScore = 0;
+                Score.Text = "";
+            }
+            else
+            {
+                scoreSystem.totalScore = 0;
+                Score.Text = "";
+            }
+        }
+        public void OpenMainForm()
+        {
+            this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
     }
 }

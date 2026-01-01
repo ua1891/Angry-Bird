@@ -81,8 +81,10 @@
   <ItemGroup>
     <Compile Include="Core\BirdManger.cs" />
     <Compile Include="Core\Game.cs" />
+    <Compile Include="Core\GameState.cs" />
     <Compile Include="Core\GameTime.cs" />
-    <Compile Include="Core\LevelManager.cs" />
+    <Compile Include="Core\LevelDataManager.cs" />
+    <Compile Include="Core\LevelFlowManager.cs" />
     <Compile Include="Enitites\Enemy.cs" />
     <Compile Include="Enitites\GameObject.cs" />
     <Compile Include="Enitites\Pig.cs" />
@@ -90,12 +92,19 @@
     <Compile Include="Enitites\StoneBlock.cs" />
     <Compile Include="Enitites\TNT.cs" />
     <Compile Include="Extensions\Bullet.cs" />
+    <Compile Include="Extensions\GameRepo.cs" />
     <Compile Include="Extensions\PowerUp.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameAllForms\ChooseLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameAllForms\ChooseLevel.Designer.cs">
+      <DependentUpon>ChooseLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="GameAllForms\MainForm.cs">
       <SubType>Form</SubType>
@@ -123,6 +132,9 @@
     <EmbeddedResource Include="Core\Game.resx" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameAllForms\ChooseLevel.resx">
+      <DependentUpon>ChooseLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameAllForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
