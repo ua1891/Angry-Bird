@@ -35,7 +35,7 @@ namespace LaeeqFramwork
             InitializeComponent();
             DoubleBuffered = true;
             HighestScore = HScore;
-            HighScore.Text = HScore.ToString();
+            ScoreHigh.Text = HScore.ToString();
             game = new Game(scoreSystem);
             game.ViewPort = this.ClientSize;
             LevelDataManager = new LevelDataManager(game, scoreSystem, this);
@@ -59,7 +59,7 @@ namespace LaeeqFramwork
             collisions.Check(game.Objects.ToList());
             game.Cleanup();
             scoreSystem.Update();
-            Score.Text =scoreSystem.totalScore.ToString();
+            LevelPoints.Text =scoreSystem.totalScore.ToString();
             _LevelFlowManager.Update();
             // NEW: Decrease cooldown
             if (levelCooldown > 0)
@@ -92,14 +92,14 @@ namespace LaeeqFramwork
                     else
                     {
                         gameRepo.Add(_LevelFlowManager.CurrentLevel + 1, HighestScore);
+                        AudioManager.Instance.StopMusic();
                         OpenMainForm();
                     }
                      break;
                 case GameState.Failed:
-
                     Main.Stop();
                     DialogResult res = MessageBox.Show("FAILED! Retry?", "Game Over", MessageBoxButtons.YesNo);
-                    Score.Text = "";
+                        LevelPoints.Text = "";
                     if (res == DialogResult.Yes)
                     {
                         Main.Stop();
@@ -111,14 +111,17 @@ namespace LaeeqFramwork
                     else
                     {
                         gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
+                        AudioManager.Instance.StopMusic();
                         OpenMainForm();
+
                     }
                     break;
 
                 case GameState.GameCompleted:
                     Main.Stop();
-                    gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
+                    gameRepo.Add(1, HighestScore);
                     MessageBox.Show("YOU FINISHED ALL LEVELS!");
+                    AudioManager.Instance.StopMusic();
                     OpenMainForm();
                     break;
             }
@@ -166,18 +169,19 @@ namespace LaeeqFramwork
         }
         private void HScore()
         {
-            int core = int.Parse(Score.Text);
+           
+            int core = int.Parse(LevelPoints.Text);
             if (core>HighestScore)
             {
                 HighestScore = core;
-                HighScore.Text= Score.Text;
+                ScoreHigh.Text= LevelPoints.Text;
                 scoreSystem.totalScore = 0;
-                Score.Text = "";
+                LevelPoints.Text = "";
             }
             else
             {
                 scoreSystem.totalScore = 0;
-                Score.Text = "";
+                LevelPoints.Text = "";
             }
         }
         public void OpenMainForm()
@@ -185,6 +189,15 @@ namespace LaeeqFramwork
             this.Close();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
+            AudioManager.Instance.StopMusic();
+            Main.Stop();
+            this.Close();
+            OpenMainForm();
         }
     }
 }

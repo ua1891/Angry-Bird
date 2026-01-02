@@ -17,7 +17,7 @@ namespace LaeeqFramwork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChooseLevel());
+            Application.Run(new MainForm());
         }
     }
 }

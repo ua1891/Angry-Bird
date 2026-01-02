@@ -24,29 +24,29 @@ namespace LaeeqFramwork.GameAllForms
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 Level1 = new Form1(1,HScore);
-            this.Close();
             Level1.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form1 Level2 = new Form1(2,HScore);
-            this.Close();
             Level2.Show();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form1 Level3 = new Form1(3,HScore);
-            this.Close();
             Level3.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form1 Level4 = new Form1(4,HScore);
-            this.Close();
+            this.Hide();
             Level4.Show();
         }
 
@@ -55,6 +55,13 @@ namespace LaeeqFramwork.GameAllForms
             this.Hide();
             Form1 Continue=new Form1(Level,HScore);
             Continue.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MainForm main=new MainForm();
+            main.Show();
+            this.Close();
         }
     }
 }

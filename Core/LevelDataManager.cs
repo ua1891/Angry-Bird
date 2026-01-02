@@ -35,8 +35,6 @@ namespace LaeeqFramwork
             // 1. CLEAR WORLD
             _game.Objects.Clear();
 
-            
-
             // 3. SETUP BASICS (Ground & Birds)
             SetupCommonWorld();
 
@@ -44,7 +42,7 @@ namespace LaeeqFramwork
             switch (levelNumber)
             {
                 case 1: SetupLevel1(); break;
-                case 2: SetupLevel2(); break;
+                case 2: SetupLevel2(); break; // Updated with Stone Base
                 case 3: SetupLevel3(); break;
                 case 4: SetupLevel4(); break;
                 default:
@@ -94,12 +92,10 @@ namespace LaeeqFramwork
             float currentY = GROUND_Y;  // Start exactly at the ground (500)
 
             // --- TIER 1: The Feet (Height 40) ---
-          
             AddBlock(cx - 50, currentY);
             AddBlock(cx + 10, currentY);
             currentY -= BLOCK_H; // Move cursor up to 460
 
-          
             AddLongBlock(cx - 70, currentY);
             currentY -= PLANK_H; // Move cursor up to 440
 
@@ -114,7 +110,6 @@ namespace LaeeqFramwork
             currentY -= PLANK_H; // Move cursor up to 380
 
             // --- TIER 5: Upper Room (Double Height = 80) ---
-
             AddBlock(cx - 50, currentY);
             AddPig(cx - 20, currentY);   // Pig inside
             AddBlock(cx + 10, currentY);
@@ -134,40 +129,44 @@ namespace LaeeqFramwork
             AddBlock(cx - 20, currentY);
         }
 
+        // ================= LEVEL 2: THE REPLICATED STRUCTURE =================
         private void SetupLevel2()
         {
-            float leftX = 700;          // Left wall X
-            float rightX = 840;         // Right wall X
-            float centerX = 770;        // Center for small roof stones
-            float currentY = GROUND_Y;  // Start at ground
+            float cx = 800;             // Center X of the structure
+            float currentY = GROUND_Y;  // Start building from the ground
+            float halfBlock = BLOCK_W / 2; // 20
+            float halfPlank = PLANK_W / 2; // 70
 
-            // ===== LEFT STONE WALL =====
-            AddStone(leftX, currentY);                  // Bottom
-            AddStone(leftX, currentY - BLOCK_H);       // Middle
-            AddStone(leftX, currentY - BLOCK_H * 2);   // Top
+            // --- TIER 1: Base Pillars (2x STONE Blocks) ---
+            // CHANGED: Using AddStone instead of AddBlock for the bottom supports
+            AddStone(cx - 50 - halfBlock, currentY); // Left Stone Pillar at X=730
+            AddStone(cx + 50 - halfBlock, currentY); // Right Stone Pillar at X=830
+            currentY -= BLOCK_H; // Move up by one block height
 
-            // ===== RIGHT STONE WALL =====
-            AddStone(rightX, currentY);
-            AddStone(rightX, currentY - BLOCK_H);
-            AddStone(rightX, currentY - BLOCK_H * 2);
+            // --- TIER 2: Lower Pigs (2x Pigs) ---
+            // Sitting directly on top of the stone pillars.
+            AddPig(cx - 50 - halfBlock, currentY);
+            AddPig(cx + 50 - halfBlock, currentY);
+            currentY -= BLOCK_H;
 
-            // ===== FLOOR PLANK connecting walls =====
-            float floorY = currentY - BLOCK_H * 3;
-            AddLongBlock(leftX - 10, floorY);  // Floor plank
+            // --- TIER 3: First Plank (1x Long Wood Plank) ---
+            AddLongBlock(cx - halfPlank, currentY);
+            currentY -= PLANK_H;
 
-            // ===== PIGS inside gaps =====
-            AddPig(leftX + 15, floorY - PLANK_H);   // Left pig
-            AddPig(rightX - 15, floorY - PLANK_H);  // Right pig
+            // --- TIER 4: Middle Section (Block - Pig - Block) ---
+            AddBlock(cx - 50 - halfBlock, currentY); // Left Block
+            AddPig(cx - halfBlock, currentY);        // Center Pig
+            AddBlock(cx + 50 - halfBlock, currentY); // Right Block
+            currentY -= BLOCK_H;
 
-            // ===== Middle roof =====
-            float roofY = floorY - PLANK_H; // above floor plank
-            AddStone(centerX - 20, roofY);       // Center stone
-            AddLongBlock(leftX - 20, roofY - BLOCK_H / 2); // small roof plank
+            // --- TIER 5: Second Plank (1x Long Wood Plank) ---
+            AddLongBlock(cx - halfPlank, currentY);
+            currentY -= PLANK_H;
 
-            // ===== Small top stones for style =====
-            AddStone(leftX + 5, roofY - BLOCK_H);  // Left top stone
-            AddStone(rightX - 5, roofY - BLOCK_H); // Right top stone
+            // --- TIER 6: Top Block (1x Wood Block) ---
+            AddBlock(cx - halfBlock, currentY);
         }
+
         // ================= LEVEL 3: THE STAIRCASE =================
         private void SetupLevel3()
         {

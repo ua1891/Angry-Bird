@@ -101,11 +101,51 @@ namespace LaeeqFramwork.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChooseLvl2Bg {
+            get {
+                object obj = ResourceManager.GetObject("ChooseLvl2Bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChooseLvL3 {
+            get {
+                object obj = ResourceManager.GetObject("ChooseLvL3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChooseLvl4 {
+            get {
+                object obj = ResourceManager.GetObject("ChooseLvl4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Crash {
             get {
                 return ResourceManager.GetStream("Crash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InstructionBg {
+            get {
+                object obj = ResourceManager.GetObject("InstructionBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -145,6 +185,16 @@ namespace LaeeqFramwork.Properties {
         internal static System.Drawing.Bitmap Main {
             get {
                 object obj = ResourceManager.GetObject("Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBg {
+            get {
+                object obj = ResourceManager.GetObject("MainBg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
