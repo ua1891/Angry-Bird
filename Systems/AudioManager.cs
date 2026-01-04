@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace LaeeqFramwork.Systems
 {
@@ -12,6 +13,7 @@ namespace LaeeqFramwork.Systems
     {
         private static AudioManager _instance;
         public static AudioManager Instance => _instance ?? (_instance = new AudioManager());
+        // ================= SFX =================
 
         // ================= MUSIC =================
         private IWavePlayer _musicOutput;
@@ -34,28 +36,32 @@ namespace LaeeqFramwork.Systems
             StopMusic();
 
             string fullPath = GetFullPath(relativePath);
+            try {
+                if (!File.Exists(fullPath))
+                    throw new FileNotFoundException("Music file not found", fullPath);
 
-            if (!File.Exists(fullPath))
-                throw new FileNotFoundException("Music file not found", fullPath);
+                _musicReader = new AudioFileReader(fullPath)
+                {
+                    Volume = _normalMusicVolume
+                };
 
-            _musicReader = new AudioFileReader(fullPath)
-            {
-                Volume = _normalMusicVolume
-            };
+                ISampleProvider provider = _musicReader;
 
-            ISampleProvider provider = _musicReader;
+                if (loop)
+                {
+                    _musicLoop = new LoopStream(_musicReader);
+                    provider = _musicLoop.ToSampleProvider();
+                }
 
-            if (loop)
-            {
-                _musicLoop = new LoopStream(_musicReader);
-                provider = _musicLoop.ToSampleProvider();
+                _musicOutput = new WaveOutEvent();
+                _musicOutput.Init(provider);
+                _musicOutput.Play();
             }
+            catch {
+                Console.WriteLine("File Not found");
 
-            _musicOutput = new WaveOutEvent();
-            _musicOutput.Init(provider);
-            _musicOutput.Play();
-        }
-
+            }
+            }
         public void StopMusic()
         {
             _musicOutput?.Stop();
@@ -153,7 +159,6 @@ namespace LaeeqFramwork.Systems
         public void Dispose()
         {
             StopMusic();
-
             foreach (var sfx in _activeSfxPlayers)
                 sfx.Dispose();
 
@@ -190,5 +195,7 @@ namespace LaeeqFramwork.Systems
             }
             return read;
         }
+       
+
     }
 }

@@ -30,6 +30,13 @@ namespace LaeeqFramwork
 
         public void LoadLevel(int levelNumber)
         {
+
+
+           
+            _game.Objects.Clear();                 // <-- ADDED
+                 
+           
+
             CurrentLevelIndex = levelNumber;
 
             // 1. CLEAR WORLD

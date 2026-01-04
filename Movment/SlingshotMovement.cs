@@ -129,6 +129,7 @@ namespace LaeeqFramwork.Systems
                 bird.HasImpacted = false;
                 bird.Launch();
                 AudioManager.Instance.PlaySfx("Assets/Audio/Slingshot.mp3");
+                AudioManager.Instance.PlaySfx("Assets/Audio/Slingshot.mp3");
                 isLaunched = true;
             }
         }

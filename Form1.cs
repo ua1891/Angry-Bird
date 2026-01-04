@@ -27,7 +27,6 @@ namespace LaeeqFramwork
         // NEW: Add the Level Manager
         LevelFlowManager _LevelFlowManager { get; set; }
         LevelDataManager LevelDataManager { get; set; }
-
         public Game Gam => game;
 
         public Form1(int Level,int HScore)
@@ -40,8 +39,8 @@ namespace LaeeqFramwork
             game.ViewPort = this.ClientSize;
             LevelDataManager = new LevelDataManager(game, scoreSystem, this);
             _LevelFlowManager = new LevelFlowManager(LevelDataManager, Gam, 4, Level);
+            LoadImages(Level);        // <-- ADDED (ensures correct background)
             Zoom();
-            AudioManager.Instance.PlayMusic("Assets/Audio/bg.mp3", true);
             Main.Start();
         }
 
@@ -79,15 +78,17 @@ namespace LaeeqFramwork
             {
                 case GameState.LevelCompleted:
                     Main.Stop();
+                   Common.PlaySound("Assets/Audio/FunkyTheme.mp3");
                     DialogResult Result=  MessageBox.Show("LEVEL COMPLETE!"," Are You wanna to continue Next...", MessageBoxButtons.YesNo);
                     HScore();///////////
                     if (Result==DialogResult.Yes)
                     {
                     _LevelFlowManager.NextLevel();
                     LoadImages(_LevelFlowManager.CurrentLevel);
+                   Common.SoundOnLevel(_LevelFlowManager.CurrentLevel);
                     Zoom();
                     levelCooldown = 60;
-                    Main.Start();          
+                        Main.Start();          
                     }
                     else
                     {
@@ -98,12 +99,14 @@ namespace LaeeqFramwork
                      break;
                 case GameState.Failed:
                     Main.Stop();
+                    Common.PlaySound("Assets/Audio/FailSound.mp3");
                     DialogResult res = MessageBox.Show("FAILED! Retry?", "Game Over", MessageBoxButtons.YesNo);
                         LevelPoints.Text = "";
                     if (res == DialogResult.Yes)
                     {
                         Main.Stop();
                         _LevelFlowManager.Retry();
+                      Common.SoundOnLevel(_LevelFlowManager.CurrentLevel);
                         levelCooldown = 60; // NEW: Reset cooldown on retry too
                         Zoom();
                         Main.Start();
@@ -111,7 +114,7 @@ namespace LaeeqFramwork
                     else
                     {
                         gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
-                        AudioManager.Instance.StopMusic();
+                        AudioManager.Instance.Dispose();
                         OpenMainForm();
 
                     }
@@ -194,10 +197,11 @@ namespace LaeeqFramwork
         private void button1_Click(object sender, EventArgs e)
         {
             gameRepo.Add(_LevelFlowManager.CurrentLevel, HighestScore);
-            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.Dispose();
             Main.Stop();
             this.Close();
             OpenMainForm();
         }
+       
     }
 }

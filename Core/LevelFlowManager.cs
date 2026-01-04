@@ -21,6 +21,7 @@ namespace LaeeqFramwork.Core
             this.MaxLevel = MaxLevel;
             this.CurrentLevel = CurrentLevel;
             _LevelDataManager.LoadLevel(CurrentLevel);
+            Common.SoundOnLevel(CurrentLevel);
         }
        
         //Here I check is Game Playing ,player fail,Player Win logic Ok
@@ -32,15 +33,15 @@ namespace LaeeqFramwork.Core
         }
         public void NextLevel()
         {
-            CurrentLevel++;
-            if (CurrentLevel >= MaxLevel)
+            if (CurrentLevel >= MaxLevel)//Levl being played 
             {
                 State = GameState.GameCompleted;
+                return;
             }
-            else {
-                _LevelDataManager.LoadLevel(CurrentLevel);
+                 CurrentLevel++;
+               _LevelDataManager.LoadLevel(CurrentLevel);
                 State = GameState.Playing;
-            }
+            
         }
         public void Retry()
         {

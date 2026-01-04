@@ -15,6 +15,7 @@ namespace LaeeqFramwork.GameAllForms
         public MainForm()
         {
             InitializeComponent();
+            Common.PlaySound("Assets/Audio/MainOp2.mp3");
             // Attach hover effect to labels
             AttachHover(label1);
             AttachHover(label2);
