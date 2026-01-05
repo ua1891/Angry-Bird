@@ -124,6 +124,18 @@
   <data name="Bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download (2).jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Angry Birds (1).jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\island concept.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download (6).jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bg5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wallpaper2you_226438.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bird" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Loss.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +154,9 @@
   <data name="Crash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\127903__hero_of_the_winds__falling_computer_with_crash.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fairy Forest.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="InstructionBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background - Angry Birds.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +165,9 @@
   </data>
   <data name="Level2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest Game Background 2d Application_ Stock Vector - Illustration of green, asset_ 73562942.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LevelBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wallpaper2you_226436.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loss.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -83,6 +83,46 @@ namespace LaeeqFramwork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bg2 {
+            get {
+                object obj = ResourceManager.GetObject("Bg2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bg3 {
+            get {
+                object obj = ResourceManager.GetObject("Bg3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bg4 {
+            get {
+                object obj = ResourceManager.GetObject("Bg4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bg5 {
+            get {
+                object obj = ResourceManager.GetObject("Bg5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bird {
             get {
                 object obj = ResourceManager.GetObject("Bird", resourceCulture);
@@ -142,6 +182,16 @@ namespace LaeeqFramwork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Forest {
+            get {
+                object obj = ResourceManager.GetObject("Forest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap InstructionBg {
             get {
                 object obj = ResourceManager.GetObject("InstructionBg", resourceCulture);
@@ -165,6 +215,16 @@ namespace LaeeqFramwork.Properties {
         internal static System.Drawing.Bitmap Level2 {
             get {
                 object obj = ResourceManager.GetObject("Level2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LevelBack {
+            get {
+                object obj = ResourceManager.GetObject("LevelBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -144,19 +144,17 @@ namespace LaeeqFramwork
                     BackgroundImage = Properties.Resources.Level2;
                     break;
                 case 3:
-                    BackgroundImage = Properties.Resources.Bg;
+                    BackgroundImage = Properties.Resources.Bg5;
                     break;
                 case 4:
-                    BackgroundImage = Properties.Resources.Bg;
+                    BackgroundImage = Properties.Resources.LevelBack;
                     break;
-
-
             }
         }
         private void Zoom()
         {
-            game.camera.Zoom = 0.6f;
-            zoomIntroFrames = 60;
+            game.camera.Zoom = 0.8f;
+            zoomIntroFrames = 240;
         }
         private void Normalize_the_zooming()
         {
