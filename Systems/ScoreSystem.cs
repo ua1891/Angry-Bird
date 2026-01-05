@@ -28,37 +28,6 @@ namespace LaeeqFramwork.Systems
 
             });
         }
-        //public void AdScore(int points, PointF worldPosition)
-        //{
-        //    const float STACK_OFFSET = 30f;
-
-        //    // Count existing popups near the same position
-        //    int stackCount = 0;
-
-        //    foreach (var popup in ScorePopups)
-        //    {
-        //        if (Math.Abs(popup.Position.X - worldPosition.X) < 10 &&
-        //            Math.Abs(popup.Position.Y - worldPosition.Y) < 10)
-        //        {
-        //            stackCount++;
-        //        }
-        //    }
-
-        //    PointF offsetPos = new PointF(
-        //        worldPosition.X,
-        //        worldPosition.Y - stackCount * STACK_OFFSET
-        //    );
-
-        //    totalScore += points;
-
-        //    ScorePopups.Add(new ScorePopup
-        //    {
-        //        Position = offsetPos,
-        //        Points = points,
-        //        LifeTime = 60
-        //    });
-        //}
-
         public void Update()
         {
              

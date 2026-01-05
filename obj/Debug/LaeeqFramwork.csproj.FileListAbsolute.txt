@@ -52,3 +52,4 @@ D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\ChooseLevel.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\MainOp2.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\FailSound.mp3
 D:\Semester 2\OOP\Framework\LaeeqFramwork\bin\Debug\Assets\Audio\FunkyTheme.mp3
+D:\Semester 2\OOP\Framework\LaeeqFramwork\obj\Debug\LaeeqFramwork.GameAllForms.Contribution.resources

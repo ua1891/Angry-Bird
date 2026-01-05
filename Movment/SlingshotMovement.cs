@@ -111,7 +111,6 @@ namespace LaeeqFramwork.Systems
 
                 float vx = Origin.X - bird.Position.X;
                 float vy = Origin.Y - bird.Position.Y;
-
                 //Extensions
                 float PullDistacnce =(float)Math.Sqrt(vx * vx + vy * vy);
                 float NormalizedPull = PullDistacnce / MaxPullDistance;

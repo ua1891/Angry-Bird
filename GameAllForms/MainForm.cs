@@ -66,5 +66,18 @@ namespace LaeeqFramwork.GameAllForms
             ChooseLevel level = new ChooseLevel();
             level.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            using(Contribution Con =new Contribution())
+            {
+                Con.ShowDialog();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

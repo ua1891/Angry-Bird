@@ -16,11 +16,8 @@ namespace GameFrameWork
             {
                 if (obj is IMovable movable)
                 {
-                        // Use the object custom gravity if set, otherwise use the global gravity
-                        float appliedGravity = obj.CustomGravity ?? Gravity;
 
-                        // Update the velocity of the object by applying gravity.
-                        // Note: This is simple Euler integration and illustrates the physics update responsibility.
+                    float appliedGravity = obj.CustomGravity ?? Gravity;        
                         movable.Velocity = new PointF(
                             movable.Velocity.X, // Horizontal velocity remains unchanged
                             movable.Velocity.Y + appliedGravity // Vertical velocity changes based on gravity
@@ -28,7 +25,6 @@ namespace GameFrameWork
 
                         if (obj is GameObject gameObject)
                         {
-                            // Update the position of the object based on its (now-updated) velocity
                             gameObject.Position = new PointF(
                                 gameObject.Position.X + movable.Velocity.X,
                                 gameObject.Position.Y + movable.Velocity.Y

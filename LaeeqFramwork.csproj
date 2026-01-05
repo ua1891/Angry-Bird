@@ -107,6 +107,12 @@
     <Compile Include="GameAllForms\ChooseLevel.Designer.cs">
       <DependentUpon>ChooseLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameAllForms\Contribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameAllForms\Contribution.Designer.cs">
+      <DependentUpon>Contribution.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameAllForms\Instruction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameAllForms\ChooseLevel.resx">
       <DependentUpon>ChooseLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameAllForms\Contribution.resx">
+      <DependentUpon>Contribution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameAllForms\Instruction.resx">
       <DependentUpon>Instruction.cs</DependentUpon>
